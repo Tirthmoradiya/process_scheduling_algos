@@ -35,25 +35,36 @@ This is a C++ implementation of various CPU scheduling algorithms commonly studi
   - Response Time
   - Average metrics for all processes
 
-## How to Use
+## Building the Project
 
-1. **Compilation**
-   ```bash
-   g++ *.cpp -o scheduler
-   ```
+### Using CMake (Recommended)
+```bash
+# Create a build directory
+mkdir build && cd build
 
-2. **Running the Program**
-   ```bash
-   ./scheduler
-   ```
+# Generate build files
+cmake ..
 
-3. **Input Format**
-   - Choose the scheduling algorithm (1-5)
-   - Enter the number of processes
-   - For each process, enter:
-     - Arrival Time
-     - Burst Time
-     - Priority (only for Priority Scheduling)
+# Build the project
+cmake --build .
+
+# Run the program
+./scheduler
+```
+
+### Using G++ Directly
+```bash
+g++ *.cpp -o scheduler
+./scheduler
+```
+
+## Input Format
+- Choose the scheduling algorithm (1-5)
+- Enter the number of processes
+- For each process, enter:
+  - Arrival Time
+  - Burst Time
+  - Priority (only for Priority Scheduling)
 
 ## Project Structure
 
@@ -62,6 +73,8 @@ This is a C++ implementation of various CPU scheduling algorithms commonly studi
 - `SchedulingBase.h/cpp` - Base classes and interfaces
 - `SchedulingAlgorithms.h/cpp` - Implementation of scheduling algorithms
 - `Utils.h/cpp` - Utility functions
+- `CMakeLists.txt` - CMake build configuration
+- `.gitignore` - Specifies which files Git should ignore
 
 ## Example Usage
 
@@ -87,6 +100,12 @@ Enter burst time of process 2: 3
 Enter arrival time of process 3: 2
 Enter burst time of process 3: 4
 ```
+
+## Requirements
+
+- C++11 or higher
+- CMake 3.10 or higher (for CMake build)
+- G++ or any C++ compiler
 
 ## Contributing
 
